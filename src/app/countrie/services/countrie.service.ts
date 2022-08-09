@@ -11,8 +11,8 @@ export class CountrieService {
 
   constructor(private http : HttpClient) { }
 
-  countrieSearch( termino : string ) : Observable<any>{
-    const url = `${ this.apiUrl }/name/${termino}`;
+  countrieSearch( inputResult : string ) : Observable<any>{
+    const url = `${ this.apiUrl }/name/${inputResult}`;
     return this.http.get( url); 
   }
 
