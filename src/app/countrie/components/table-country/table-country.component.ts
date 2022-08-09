@@ -12,6 +12,7 @@ import { Country } from '../../interfaces/countrie.interface';
 export class TableCountryComponent implements OnInit {
 
   @Input() countrie : Country[] = [];
+  @Input() capital : Country[] = [];
   
   constructor() { }
 

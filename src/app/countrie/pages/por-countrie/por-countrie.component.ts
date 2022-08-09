@@ -22,7 +22,7 @@ export class PorCountrieComponent implements OnInit {
   search( inputResult: string): void {
     this.haveError = false;
     this.inputResult = inputResult;
-    this.countrieService.countrieSearch( this.inputResult )
+    this.countrieService.capitalSearch( this.inputResult )
       .subscribe( 
         countriesResponse => {
           this.countrie = countriesResponse; 

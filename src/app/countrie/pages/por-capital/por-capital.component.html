@@ -1,1 +1,28 @@
-<p>por-capital works!</p>
+<p>By Capital</p>
+
+<div class="row">
+    <div class="col">
+        <app-country-input
+        (onEnter)="search( $event )"
+        >
+        </app-country-input>
+    </div>
+</div>
+
+<hr>
+
+<div 
+    *ngIf="haveError"
+    class="alert alert-danger">
+        Can't find {{ inputResult }}
+</div>
+
+<div 
+    *ngIf="!haveError"
+    class="row">
+    <div class="col">
+        <app-table-country 
+            [capital]="capital">
+        </app-table-country>
+    </div>
+</div>
