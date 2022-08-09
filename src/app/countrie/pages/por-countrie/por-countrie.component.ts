@@ -1,21 +1,31 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { CountrieService } from '../../services/countrie.service';
 
 @Component({
   selector: 'app-por-countrie',
   templateUrl: './por-countrie.component.html',
-  styleUrls: ['./por-countrie.component.css']
+  styleUrls: []
 })
 export class PorCountrieComponent implements OnInit {
 
-  termino: string = ''; 
+  inputResult: string = ''; 
+  haveError : boolean = false;
 
-  constructor() { }
+  constructor( private countrieService: CountrieService) { }
 
   ngOnInit(): void {
   }
 
     search(): void {
-      console.log(this.termino)
+      this.haveError = false;
+      console.log(this.inputResult); 
+      this.countrieService.countrieSearch( this.inputResult )
+        .subscribe( response => {
+          console.log(response);
+        }, (err) => {
+            this.haveError= true;
+        });
     }
 
 
