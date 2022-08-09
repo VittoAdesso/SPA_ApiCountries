@@ -33,5 +33,7 @@ export class PorCountrieComponent implements OnInit {
       });
   }
 
-
+  sugerencias( termino : string){
+    this.haveError = false;
+  }
 }

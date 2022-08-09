@@ -3,5 +3,6 @@
         name="inputResult"
         placeholder="Search by country..."
         class="form-control"
-        [(ngModel)]="inputResult"/>
+        [(ngModel)]="inputResult"
+        (input)="teclaPresionada($event)"/>
 </form>
