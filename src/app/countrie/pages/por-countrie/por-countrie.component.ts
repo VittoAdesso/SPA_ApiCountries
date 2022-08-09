@@ -19,9 +19,9 @@ export class PorCountrieComponent implements OnInit {
   }
 
     
-  search(): void {
+  search( inputResult: string): void {
     this.haveError = false;
-    // console.log(this.inputResult); 
+    this.inputResult = inputResult;
     this.countrieService.countrieSearch( this.inputResult )
       .subscribe( 
         countriesResponse => {
