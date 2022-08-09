@@ -1,5 +1,6 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Country } from '../../interfaces/countrie.interface';
 import { CountrieService } from '../../services/countrie.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class PorCountrieComponent implements OnInit {
 
   inputResult: string = ''; 
   haveError : boolean = false;
+  countrie : Country[] = [];
 
   constructor( private countrieService: CountrieService) { }
 
