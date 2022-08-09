@@ -1,15 +1,9 @@
-<p>por-countrie works!</p>
+<p>By Country</p>
 <hr>
 
 <div class="row">
     <div class="col">
-        <form (ngSubmit)="search()" autocomplete="off">
-            <input type="text"
-                name="inputResult"
-                placeholder="Search by country..."
-                class="form-control"
-                [(ngModel)]="inputResult"/>
-        </form>
+        <app-country-input></app-country-input>
     </div>
 </div>
 
@@ -25,29 +19,6 @@
     *ngIf="!haveError"
     class="row">
     <div class="col">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Flag</th>
-                    <th>Name</th>
-                    <th>Poblation</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody *ngFor="let country of countrie; let i= index">
-                <tr>
-                    <td> {{ i + 1 }}</td>
-                    <td>
-                        <img [src]="country.flag" alt="{{country.name}}" class="small-flag">
-                    </td>
-                    <td>{{  country.name }}</td>
-                    <td> {{ country.population | number }}</td>
-                    <td>
-                        <a [routerLink]="['/pais/', country.alpha2Code]">View...</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <app-table-country [countrie]="countrie"></app-table-country>
     </div>
 </div>

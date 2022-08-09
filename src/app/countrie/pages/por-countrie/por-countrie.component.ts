@@ -1,4 +1,3 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/countrie.interface';
 import { CountrieService } from '../../services/countrie.service';
@@ -19,19 +18,20 @@ export class PorCountrieComponent implements OnInit {
   ngOnInit(): void {
   }
 
-    search(): void {
-      this.haveError = false;
-      // console.log(this.inputResult); 
-      this.countrieService.countrieSearch( this.inputResult )
-        .subscribe( 
-          countriesResponse => {
-            this.countrie = countriesResponse; 
-      
-        }, (err) => {
-            this.haveError= true;
-            this.countrie = []; 
-        });
-    }
+    
+  search(): void {
+    this.haveError = false;
+    // console.log(this.inputResult); 
+    this.countrieService.countrieSearch( this.inputResult )
+      .subscribe( 
+        countriesResponse => {
+          this.countrie = countriesResponse; 
+    
+      }, (err) => {
+          this.haveError= true;
+          this.countrie = []; 
+      });
+  }
 
 
 }

@@ -7,6 +7,8 @@ import { PorCountrieComponent } from './pages/por-countrie/por-countrie.componen
 import { PorRegionComponent } from './pages/por-region/por-region.component';
 import { SeeCountrieComponent } from './pages/see-countrie/see-countrie.component';
 import { RouterModule } from '@angular/router';
+import { TableCountryComponent } from './components/table-country/table-country.component';
+import { CountryInputComponent } from './components/country-input/country-input.component';
 
 
 
@@ -15,13 +17,17 @@ import { RouterModule } from '@angular/router';
     PorCapitalComponent,
     PorCountrieComponent,
     PorRegionComponent,
-    SeeCountrieComponent
+    SeeCountrieComponent,
+    TableCountryComponent,
+    CountryInputComponent
   ],
   exports: [
     PorCapitalComponent,
     PorCountrieComponent,
     PorRegionComponent,
-    SeeCountrieComponent
+    SeeCountrieComponent,
+    TableCountryComponent,
+    CountryInputComponent
   ],
   imports: [
     CommonModule, 
