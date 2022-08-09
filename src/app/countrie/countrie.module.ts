@@ -6,6 +6,7 @@ import { PorCapitalComponent } from './pages/por-capital/por-capital.component';
 import { PorCountrieComponent } from './pages/por-countrie/por-countrie.component';
 import { PorRegionComponent } from './pages/por-region/por-region.component';
 import { SeeCountrieComponent } from './pages/see-countrie/see-countrie.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -24,7 +25,8 @@ import { SeeCountrieComponent } from './pages/see-countrie/see-countrie.componen
   ],
   imports: [
     CommonModule, 
-    FormsModule
+    FormsModule, 
+    RouterModule
   ]
 })
 export class CountrieModule { }

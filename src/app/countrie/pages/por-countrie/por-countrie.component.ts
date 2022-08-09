@@ -21,16 +21,15 @@ export class PorCountrieComponent implements OnInit {
 
     search(): void {
       this.haveError = false;
-      console.log(this.inputResult); 
+      // console.log(this.inputResult); 
       this.countrieService.countrieSearch( this.inputResult )
-        .subscribe( countriesResponse => {
-          console.log(countriesResponse);
-
+        .subscribe( 
+          countriesResponse => {
+            this.countrie = countriesResponse; 
       
-
-
         }, (err) => {
             this.haveError= true;
+            this.countrie = []; 
         });
     }
 
