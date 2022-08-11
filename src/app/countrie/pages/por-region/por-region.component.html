@@ -1,1 +1,22 @@
-<p>por-region works!</p>
+<div 
+*ngIf="!pais; else divPais"
+class="alert alert-info">
+    Wait please...
+</div>
+
+<ng-template #divPais>
+
+<div class="row">
+    <div class="col-12">
+        <h1> Region: <small>{{ pais.name }}</small></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>Flag</h3>
+            <img [src]="pais.flag" class="small-flag">
+        </div>
+    </div>
+</div>
+
+</ng-template>

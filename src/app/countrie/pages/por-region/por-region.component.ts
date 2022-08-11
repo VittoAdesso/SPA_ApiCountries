@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
+import { Country } from '../../interfaces/countrie.interface';
 import { CountrieService } from '../../services/countrie.service';
 
 @Component({
@@ -10,17 +11,19 @@ import { CountrieService } from '../../services/countrie.service';
 })
 export class PorRegionComponent implements OnInit {
 
+  pais!: Country;
+
   constructor( private activateRoute: ActivatedRoute, private countryService: CountrieService ) { }
 
   ngOnInit(): void {
 
     this.activateRoute.params
       .pipe( 
-        switchMap(({id}) => this.countryService.getRegionById(id))
+        switchMap(({id}) => this.countryService.getRegionById(id)), 
+        tap( console.log)
       )
-        .subscribe( response => {
-          console.log( response );
-        })
+        .subscribe( pais => this.pais = pais );
+        }
 
     // second way, little longer
     // this.activateRoute.params
@@ -33,6 +36,5 @@ export class PorRegionComponent implements OnInit {
     // })
 
     
-  }
-
 }
+
