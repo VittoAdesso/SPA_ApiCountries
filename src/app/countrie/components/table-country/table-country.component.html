@@ -12,9 +12,11 @@
         <tr>
             <td> {{ i + 1 }}</td>
             <td>
-                <img [src]="country.flag" alt="{{country.name}}" class="small-flag">
+                <img [src]="country.flag" alt="{{country.name }}" class="small-flag">
             </td>
-            <td>{{ country.name }}</td>
+            <!-- pipe to transform object object  use | json -->
+            <td>{{ country.name | json }}</td> 
+
             <td> {{ country.population | number }}</td>
             <td>
                 <a [routerLink]="['/pais/', country.alpha2Code]">View...</a>
